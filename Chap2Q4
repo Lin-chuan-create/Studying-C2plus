@@ -1,0 +1,12 @@
+//编写一个程序，让用户输入其年龄，然后显示该年龄包含多少个月。
+#include<iostream>
+int main()
+{
+	using namespace std;
+	int age;
+	cout << "Please input your age and I'll tell you how many months it includes." << endl;
+	cin >> age;
+	age = age * 12;
+	cout <<age;
+	return 0;
+}
