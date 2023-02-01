@@ -1,0 +1,20 @@
+//编写一个程序，要求用户以度、分、秒的方式输入一个纬度，然后以度为单位显示该纬度。1度为60分，1分等于60秒，请以符号常量的方式表示这些值。对于每个输入值，应使用一个独立的变量存储它。
+#include<iostream>
+int main()
+{
+	using namespace std;
+	const int weidu = 60;
+	cout << "纬度转换小程序" << endl;
+	cout << "请输入纬度" << endl << "__度\b\b\b\b";
+	double du;
+	cin >> du;
+	cout << "__分\b\b\b\b";
+	double fen;
+	cin >> fen;
+	cout << "__秒\b\b\b\b";
+	double miao;
+	cin >> miao;
+	double xiaoshu = du + (fen / weidu) + (miao / (weidu * weidu));
+	cout << du << " 度 " << fen << " 分 " << miao << " 秒  = " << xiaoshu << " 度";
+	return 0;
+}
