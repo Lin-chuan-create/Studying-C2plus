@@ -1,0 +1,22 @@
+//编写一个程序，它要求用户首先输入其名，然后输入其姓；然后程序使用一个逗号和空格将姓和名组合起来，并存储和显示组合结果。请使用char数组和头文件cstring中的函数。下面是该程序运行时的情形：
+Enter your first name: Filp
+Enter your last name: Fleming
+Here's the information in a single string: Fleming, Filp
+#include<iostream>
+#include<cstring>
+int main()
+{
+	using namespace std;
+	char first_name[20];
+	char last_name[20];
+	cout << "Enter your first name: ";
+	cin >> first_name;
+	cout << "Enter your last name: ";
+	cin >> last_name;
+	cout << "Here's the information in a single string: ";
+	strcat_s(last_name, ", ");
+	strcat_s(last_name, first_name);
+	cout << last_name;
+	return 0;
+}
+//这里存在一个问题。就是strcat_s与strcat的区别何在。我搜索了一下，大概是说strcat_s不会导致加长字符串所带来的存储上的错误。
