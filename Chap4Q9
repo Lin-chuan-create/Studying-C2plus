@@ -1,0 +1,25 @@
+//完成编程练习6，但使用new来动态分配数组，而不是声明一个包含3个元素的CandyBar数组。
+#include <iostream>
+using namespace std;
+struct CandyBar 
+{
+	char brand[20];
+	double weight;
+	int cal;
+};
+int main()
+{
+	CandyBar* snack = new CandyBar[3];
+	cout << "Give me some data.\n";
+	int i;
+	for (i = 0; i < 3; i++)
+	{
+		cin.getline(snack[i].brand,20);
+		cin >> snack[i].weight >> snack[i].cal;
+		cin.get();//此处的逻辑我不太明白。大概是cin.get()读取了上面输入完两个变量的函数？
+	}
+	for (i = 0; i < 3; i++)
+		cout << snack[i].brand <<" "<< snack[i].weight << " " << snack[i].cal<<endl;
+	delete [] snack;
+	return 0;
+}
